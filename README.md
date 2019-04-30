@@ -1,3 +1,3 @@
 # eVoucherGDPR
 stručna praksa | Atos
-Klik na Branch i odaberi ganu da bi vidio kôd u njima
+Klik na Branch i odaberi granu da bi vidio kôd u njima
