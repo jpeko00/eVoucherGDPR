@@ -1,0 +1,69 @@
+ALTER PROCEDURE is_any (
+    @alias varchar(30),
+    @row_count INT OUTPUT
+) AS
+BEGIN
+    SET NOCOUNT OFF;  
+    SELECT COUNT(*)
+    FROM
+        dbo.table_eVoucher
+    WHERE
+        alias = @alias;
+    SELECT @row_count = @@ROWCOUNT;
+    RETURN @row_count;
+END; 
+-------------------------------------
+create procedure get_alias @alias varchar(20), @number varchar(20), @result int OUTPUT
+as
+
+select * from dbo.ev WHERE username_=@alias AND number_=@number;  // ako imamo veæ u kombu taj broj i alias, sve pet, vrati 1 - znaèi ne treba ništa novo 
+
+if @@ROWCOUNT = 1
+    SELECT @result = 1;
+else 
+BEGIN
+    select * from dbo.ev WHERE number_=@number;                   // nemamo u kombu, ali imamo taj broj s drugim aliasom
+
+    if @@ROWCOUNT> 0
+    BEGIN
+        select * from dbo.ev WHERE username_=@alias;		  // ako zatrazeni alias nema nitko drugi vrati 2 - update alias where taj broj 
+        if @@ROWCOUNT = 0
+        	select @result = 2;
+        else 
+        	select @result = 3;				  // ima netko drugi alias, vrati 3 - treba mijenjati alias pa provjeriti ponovno, vraæamo se na return 2 za kraj
+    END
+    else
+    BEGIN
+   	select * from dbo.ev WHERE username_=@alias;		  // nemamo jos uopce taj broj u bazi, ako nije zauzet trazeni alias, vrati 4, unesemo u bazu novi insert broj alias
+    	if @@ROWCOUNT = 0
+    		select @result = 4;
+    	else 
+    		select @result = 5;				  // inace vrati 5, promijenit cemo alias, pokusati ponovno, na kraju ce vratiti 4 i kraj
+    END
+END
+
+SELECT @result;	
+---------------------------------------------------
+alter procedure commit_tran @alias varchar(30), @number varchar(30), @amount_added int, @state int OUTPUT
+AS 
+BEGIN
+    declare @iznos int;
+    declare @iznosiztablice int;
+    select @iznosiztablice = amount_ from dbo.ev WHERE username_=@alias;
+    select @iznos = @iznosiztablice + @amount_added;
+    select @state = 5;
+    INSERT INTO dbo.transactions (user_id) values (@number);
+    IF @@ROWCOUNT = 0
+	select @state = 1;
+    ELSE
+    UPDATE dbo.ev SET amount_ = @iznos WHERE username_ = @alias;
+    IF @@ROWCOUNT = 0
+    BEGIN
+        select @state = 1;
+	DELETE FROM dbo.trans WHERE transaction_id=(SELECT MAX(transaction_id) FROM dbo.trans);
+    END
+    select @state;
+END
+-------------------------------------------------
+
+
