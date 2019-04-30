@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+             x:Class=" eVoucherGDPR.Views.QRScan"
+             BackgroundImage="background.png">
+    
+    <ContentPage.Content>
+
+        <StackLayout VerticalOptions="Center" 
+                     HorizontalOptions="Center">
+
+            <Label VerticalTextAlignment="Center" VerticalOptions="Center" Text=" Molimo skenirajte kôd ili unesite alias." TextColor="White" FontSize="Medium" Margin="0,0,0,10"/>
+            <zxing:ZXingScannerView x:Name="zxing" 
+                                    IsScanning="True"
+                                    IsAnalyzing="True"
+                                    HorizontalOptions="CenterAndExpand"
+                                    HeightRequest="350"
+                                    FlowDirection="LeftToRight"
+                                    OnScanResult="OnScanResult"/>
+
+            
+            <StackLayout Orientation="Horizontal" 
+                         HorizontalOptions="FillAndExpand"
+                         VerticalOptions="Center">
+
+                <Frame BackgroundColor="White"  
+                   Padding="5,0,0,0" 
+                   Margin="10,5,0,0"
+                   HorizontalOptions="FillAndExpand" 
+                   CornerRadius="15">
+
+                    <Entry x:Name="entry_alias" 
+                       Margin="5,0,0,0" 
+                       TextColor="#2367d1"
+                       FontSize="20"
+                       HorizontalTextAlignment="Center"
+                       PlaceholderColor="#618bce"
+                       Placeholder="Unesite alias..." 
+                       HeightRequest="60"
+                       BackgroundColor="Transparent" 
+                       TextChanged="OnEntryTextChanged"/>
+
+                </Frame>
+
+                <ImageButton x:Name="next" 
+                             Source="manual_left.png"
+                             Margin="0,5,10,0"
+                             Padding="5"
+                             HeightRequest="60"
+                             CornerRadius="15"
+                             Rotation="180"
+                             HorizontalOptions="Center"
+                             VerticalOptions="Center"
+                             IsEnabled="True"
+                             BackgroundColor="WhiteSmoke"
+                             Clicked="OnNextButtonClicked"/>
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

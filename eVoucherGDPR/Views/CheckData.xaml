@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class=" eVoucherGDPR.Views.CheckData"
+             BackgroundImage="background.png"
+             >
+    
+    <ContentPage.Content>
+        
+        <StackLayout VerticalOptions="CenterAndExpand">
+        
+            <Frame BackgroundColor="Transparent" 
+                   Margin ="0,40,0,0" 
+                   Padding="10" 
+                   HorizontalOptions="Center" 
+                   CornerRadius="15">
+
+                <Label x:Name="tekst_odaberite" 
+                       FontSize="Medium" 
+                       Text="Odaberite iznos:" 
+                       TextColor="White"
+                       Margin="0,0,0,0" 
+                       BackgroundColor="Transparent" />
+            </Frame >
+            <Frame x:Name="frame_grid" Margin="10,0,10,0" BorderColor="White" CornerRadius="20" HasShadow="True" BackgroundColor="Transparent" Padding="10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Button x:Name="Button_10" Margin="10,10,10,10" Text="10" FontSize="Large" TextColor="#2367d1" BackgroundColor="White" CornerRadius="30" HeightRequest="60" Clicked="On10ButtonClicked"/>
+                    <Button x:Name="Button_20" Margin="0,10,10,10" Text="20" FontSize="Large" TextColor="#2367d1" Grid.Column="1" BackgroundColor="White" CornerRadius="30" HeightRequest="60" Clicked="On20ButtonClicked"/>
+                    <Button x:Name="Button_50" Margin="10,0,10,10" Text="50" FontSize="Large" TextColor="#2367d1" Grid.Row="1" BackgroundColor="White" CornerRadius="30" HeightRequest="60" Clicked="On50ButtonClicked"/>
+                    <Button x:Name="Button_100" Margin="0,0,10,10" Text="100" FontSize="Large" TextColor="#2367d1" Grid.Row="1" Grid.Column="1" BackgroundColor="White" CornerRadius="30" HeightRequest="60" Clicked="On100ButtonClicked"/>
+                </Grid>
+            </Frame>
+
+
+            <Frame BackgroundColor="White" 
+                   Margin ="0,20,0,0" 
+                   Padding="0" 
+                   WidthRequest="170"
+                   HorizontalOptions="Center" 
+                   CornerRadius="15">
+                
+                <Entry x:Name="ValueEntry" 
+                       HorizontalTextAlignment="Center"
+                       Margin="0,0,0,0" 
+                       TextColor="#2367d1"
+                       PlaceholderColor="#618bce"
+                       Placeholder="Unesite vrijednost..." 
+                       BackgroundColor="Transparent" 
+                       TextChanged="OnTextChanged"
+                       Keyboard="Numeric"/>
+                
+            </Frame>
+
+            <Frame BackgroundColor="Transparent" 
+                   Margin ="0,40,0,0" 
+                   Padding="10" 
+                   HorizontalOptions="Center" 
+                   CornerRadius="15">
+                
+                <Label x:Name="tekst" 
+                       FontSize="Medium" 
+                       Text="" 
+                       TextColor="White"
+                       Margin="0,0,0,0" 
+                       BackgroundColor="Transparent" />
+            </Frame>
+
+            <Frame x:Name="frame_send"
+                   BackgroundColor="WhiteSmoke" 
+                   Margin ="0,10,0,0" 
+                   Padding="10" 
+                   HorizontalOptions="Center" 
+                   CornerRadius="30"
+                   HasShadow="True">
+                
+                <ImageButton x:Name="button_send"  
+                             Source="manual_send.png" 
+                             WidthRequest="70"
+                             Clicked="OnButtonSendClick" 
+                             BackgroundColor="Transparent"/>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

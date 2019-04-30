@@ -1,0 +1,16 @@
+C:\Users\jpeko\source\repos\eVoucherGDPR\eVoucherGDPR\eVoucherGDPR\bin\Debug\netstandard2.0\eVoucherGDPR.deps.json
+C:\Users\jpeko\source\repos\eVoucherGDPR\eVoucherGDPR\eVoucherGDPR\bin\Debug\netstandard2.0\eVoucherGDPR.dll
+C:\Users\jpeko\source\repos\eVoucherGDPR\eVoucherGDPR\eVoucherGDPR\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\jpeko\source\repos\eVoucherGDPR\eVoucherGDPR\eVoucherGDPR\obj\Debug\netstandard2.0\eVoucherGDPR.csproj.CoreCompileInputs.cache
+C:\Users\jpeko\source\repos\eVoucherGDPR\eVoucherGDPR\eVoucherGDPR\obj\Debug\netstandard2.0\eVoucherGDPR.AssemblyInfoInputs.cache
+C:\Users\jpeko\source\repos\eVoucherGDPR\eVoucherGDPR\eVoucherGDPR\obj\Debug\netstandard2.0\eVoucherGDPR.AssemblyInfo.cs
+C:\Users\jpeko\source\repos\eVoucherGDPR\eVoucherGDPR\eVoucherGDPR\bin\Debug\netstandard2.0\eVoucherGDPR.pdb
+C:\Users\jpeko\source\repos\eVoucherGDPR\eVoucherGDPR\eVoucherGDPR\obj\Debug\netstandard2.0\eVoucherGDPR.dll
+C:\Users\jpeko\source\repos\eVoucherGDPR\eVoucherGDPR\eVoucherGDPR\obj\Debug\netstandard2.0\eVoucherGDPR.pdb
+C:\Users\jpeko\source\repos\eVoucherGDPR\eVoucherGDPR\eVoucherGDPR\obj\Debug\netstandard2.0\Views\CheckData.xaml.g.cs
+C:\Users\jpeko\source\repos\eVoucherGDPR\eVoucherGDPR\eVoucherGDPR\obj\Debug\netstandard2.0\Views\MainPage.xaml.g.cs
+C:\Users\jpeko\source\repos\eVoucherGDPR\eVoucherGDPR\eVoucherGDPR\obj\Debug\netstandard2.0\Views\QRScan.xaml.g.cs
+C:\Users\jpeko\source\repos\eVoucherGDPR\eVoucherGDPR\eVoucherGDPR\obj\Debug\netstandard2.0\Views\ReadManual.xaml.g.cs
+C:\Users\jpeko\source\repos\eVoucherGDPR\eVoucherGDPR\eVoucherGDPR\obj\Debug\netstandard2.0\Views\ResultPage.xaml.g.cs
+C:\Users\jpeko\source\repos\eVoucherGDPR\eVoucherGDPR\eVoucherGDPR\obj\Debug\netstandard2.0\eVoucherGDPR.csprojAssemblyReference.cache
+C:\Users\jpeko\source\repos\eVoucherGDPR\eVoucherGDPR\eVoucherGDPR\obj\Debug\netstandard2.0\XamlC.stamp

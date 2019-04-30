@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:eVoucherGDPR"
+             x:Class=" eVoucherGDPR.Views.MainPage"
+             BackgroundImage="background.png">
+
+    
+
+    <StackLayout VerticalOptions="CenterAndExpand" 
+                 HorizontalOptions="Center" Padding="20">
+
+        <Frame x:Name="frame_qr" BorderColor="White"  CornerRadius="20" HasShadow="True" BackgroundColor="Transparent" WidthRequest="110" HorizontalOptions="Center" Padding="15,15,15,0">
+
+            <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+
+                <ImageButton x:Name="button_read_code" 
+                         Source="icon_qr.png" 
+                         HorizontalOptions="Center" 
+                         WidthRequest="100" 
+                         Pressed="OnButtonScanQRPressed"
+                         Released="OnButtonScanQRReleased"
+                         BackgroundColor="Transparent"/>
+
+                <Label x:Name="label_kod"
+                   Text="Učitaj QR kôd" 
+                   TextColor="White"
+                   FontFamily="Andalus"
+                   HorizontalTextAlignment="Center" 
+                   FontSize="18"
+                   Grid.Row="1"/>
+           </Grid>
+        </Frame>
+
+        <Frame x:Name="frame_manual" BorderColor="White" Margin="0,20,0,0" CornerRadius="20" HasShadow="True" BackgroundColor="Transparent" WidthRequest="110" HorizontalOptions="Center" Padding="15,15,15,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+
+                <ImageButton x:Name="button_read_manual" 
+                        Source="icon_manual.png" 
+                        HorizontalOptions="Center" 
+                        WidthRequest="100" 
+                        Pressed="onButtonReadManualPressed"
+                        Released="onButtonReadManualReleased" 
+                        BackgroundColor="Transparent"/>
+
+                <Label x:Name="label_upute"
+                   Text="Upute" 
+                   TextColor="White"
+                   FontFamily="Comic Sans MS"
+                   HorizontalTextAlignment="Center" 
+                   FontSize="18"
+                   Grid.Row="1"/>
+
+            </Grid>
+        </Frame>
+    </StackLayout>
+
+</ContentPage>

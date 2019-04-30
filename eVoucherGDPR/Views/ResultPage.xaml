@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class=" eVoucherGDPR.Views.ResultPage"
+             BackgroundImage="background.png">
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame x:Name="frame_grid" Margin="10,50,10,0" BorderColor="White" CornerRadius="20" HasShadow="True" BackgroundColor="Transparent" Padding="10">
+                <Grid>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="2*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+
+                    <Label Text=""
+                   x:Name="label_info_code"
+                   FontSize="Large"
+                   TextColor="White"
+                   Margin="0,0,0,0"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="CenterAndExpand" />
+
+                    <Label Text="Status:"
+                   TextColor="White"
+                   Margin="0,10,0,0"
+                   FontAttributes="Bold"
+                   FontSize="Medium"
+                   Grid.Row="1"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="CenterAndExpand"/>
+
+                    <Frame BackgroundColor="White" 
+                   Margin ="10,5,0,10" 
+                   Padding="10" 
+                   HorizontalOptions="Center" 
+                   Grid.Row="2"
+                   CornerRadius="15">
+
+                        <Label Text=""
+                          x:Name="label_info_text"
+                          TextColor="#2367d1"
+                          FontAttributes="Italic"
+                          FontSize="Medium"
+                          HorizontalTextAlignment="Center"
+                          VerticalTextAlignment="Center"
+                          VerticalOptions="CenterAndExpand"
+                          HorizontalOptions="CenterAndExpand"
+                          LineBreakMode="WordWrap"
+                          MaxLines="4"/>
+                    </Frame>
+                </Grid>
+            </Frame>
+
+
+            <Image Source="" 
+                   x:Name="img_info"
+                   WidthRequest="150"
+                   HorizontalOptions="Center"
+                   VerticalOptions="CenterAndExpand"
+                   />
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
